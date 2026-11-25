@@ -1,9 +1,10 @@
 import { mkdirSync, writeFileSync, chmodSync } from "node:fs";
 import { join } from "node:path";
+
 // One word for the human: the boss who hands over the controls and disappears.
-const word = "autopilot";
-const outDir = process.env.MAKEFUN_OUTPUT_DIR || "/output";
-mkdirSync(outDir, { recursive: true });
-const outPath = join(outDir, "entry.txt");
-writeFileSync(outPath, word, "utf8");
-chmodSync(outPath, 0o644);
+const entryWord = "autopilot";
+const outputDir = process.env.MAKEFUN_OUTPUT_DIR || "/output";
+mkdirSync(outputDir, { recursive: true });
+const outputPath = join(outputDir, "entry.txt");
+writeFileSync(outputPath, entryWord, "utf8");
+chmodSync(outputPath, 0o644);
